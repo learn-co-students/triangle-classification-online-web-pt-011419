@@ -9,9 +9,22 @@ class Triangle
   end
 
   def kind
-    if (@s1 + @s2) <= @s3 || (@s2 + @s3) <= @s1 || (@s3 + @s1) <= @s2
-      raise TriangleError
-    end
+    if (@s1 + @s2) <= @s3 || (@s2 + @s3) <= @s1 || (@s3 + @s1) <= @s2 || (@s1 * @s2 * @s3) == 0
 
+      begin
+        raise TriangleError
+        puts error.message
+      end
+
+    elsif s1 == s2 && s1 == s3
+      self.kind = :equilateral
+
+    elsif s1 == s2 || s2 == s3 || s3 == s1
+      self.kind = :isosceles
+
+    else
+      self.kind = :scalene
+
+    end
   end
 end
