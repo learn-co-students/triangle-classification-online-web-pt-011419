@@ -12,11 +12,11 @@ class Triangle
       raise TriangleError # raise error if any two sides combined are shorter than the third side
     else
       if (@side1 == @side2) && (@side2 == @side3)
-        :equilateral # defines eqilateral, all sides the same length
+        :equilateral # defines type eqilateral, all sides the same length
       elsif (@side1 == @side2) || (@side2 == @side3) || (@side1 == @side3)
-        :isosceles # defines isosceles, two sides the same length
+        :isosceles # defines type isosceles, two sides the same length
       elsif (@side1 != @side2) && (@side2 != @side3) && (@side1 != @side3)
-        :scalene # defines scalene, no sides the same length
+        :scalene # defines type scalene, no sides the same length
       end
     end
   end
