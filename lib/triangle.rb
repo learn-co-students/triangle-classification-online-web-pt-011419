@@ -10,13 +10,16 @@ class Triangle
   end
 
   def kind
+    # Check length greater than 0
     @sides.each do |length|
       if length <= 0
         raise TriangleError
-      elsif (@a + @b) <= @c || (@a +@c) <= @b || (@b + @c) <= @a
-        raise TriangleError
       end
+    # Check sum of any 2 sides greater than third
+    if (@a + @b) <= @c || (@a +@c) <= @b || (@b + @c) <= @a
+        raise TriangleError
     end
+    # Return Triangle Type
     if @a == @b && @b == @c && @a == @c
         return :equilateral
     elsif @a == @b || @b == @c || @a == @c
